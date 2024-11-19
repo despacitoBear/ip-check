@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "IP Check",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+      "16": "icons/16x16.png",
+      "48": "icons/48x48.png",
+      "128": "icons/128x128.png"
+    }
+    },
+    "permissions": ["storage"],
+    "host_permissions": ["*://*/*"]
+  }
+  

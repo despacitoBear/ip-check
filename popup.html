@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Checker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <main id="mainContent">
+      <!-- Экран "Проверка" -->
+      <div id="checkView" class="view hidden">
+        <h2>Проверка IP</h2>
+        <input type="text" id="ipInput" placeholder="Введите IP-адрес">
+        <button id="checkBtn">Проверить</button>
+        <button id="rawBtn">RAW</button>
+        <div id="resultField"></div>
+      </div>
+
+      <!-- Экран "Настройки" -->
+      <div id="settingsView" class="view hidden">
+        <h2>Настройки</h2>
+        <input type="text" id="serverInput" placeholder="Введите адрес сервера">
+        <button id="saveSettingsBtn">Сохранить</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+  <script src="storage.js"></script>
+</body>
+</html>
