@@ -126,3 +126,21 @@ body {
     }
   }
   
+  .input-success {
+    border: 2px solid green;
+  }
+  
+  .text-success {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Ошибочное состояние */
+  .input-error {
+    border: 2px solid red;
+  }
+  
+  .text-error {
+    color: red;
+    font-weight: bold;
+  }

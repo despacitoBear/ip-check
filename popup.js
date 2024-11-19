@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     checkBtn.addEventListener("click", async () => {
       const { server } = await chrome.storage.local.get("server");
       if (!server) {
-        resultField.textContent = "Ошибка: Сначала настройте сервер!";
+        resultField.textContent = "Ошибка: впишите сервер";
         resultField.classList.add("error");
         return;
       }
       
       const ip = ipInput.value.trim();
       if (!ip) {
-        resultField.textContent = "Ошибка: Введите IP-адрес!";
+        resultField.textContent = "Ошибка: введите IP-адрес";
         resultField.classList.add("error");
         return;
       }
@@ -65,6 +65,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch(url);
         if (response.ok) {
           const data = await response.json();
+          ipInput.classList.remove("input-success", "input-error");
+          resultField.classList.remove("text-success", "text-error");
+          if (data.detail && data.detail === "iP address not found in deny list") {
+            resultField.textContent = "Не в бане";
+            ipInput.classList.add("input-success");
+            resultField.classList.add("text-success");
+          } else if (data.ip) {
+            resultField.textContent = "В бане";
+            ipInput.classList.add("input-error");
+            resultField.classList.add("text-error");
+          }
           resultField.textContent = JSON.stringify(data, null, 2);
           resultField.classList.remove("error");
         } else {
